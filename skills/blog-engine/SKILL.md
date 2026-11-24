@@ -1,6 +1,6 @@
 ---
 name: blog-engine
-description: Runs a product blog built to win AI answers: weekly it builds a brief from AI answer gaps for approval, daily it writes one approved post as a PR and measures earlier posts. Use for "blog engine", "weekly brief", or "write today's post".
+description: 'Runs a product blog built to win AI answers: weekly it builds a brief from AI answer gaps for approval, daily it writes one approved post as a PR and measures earlier posts. Use for "blog engine", "weekly brief", or "write today''s post".'
 ---
 
 # Blog Engine

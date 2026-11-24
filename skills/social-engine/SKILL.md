@@ -1,6 +1,6 @@
 ---
 name: social-engine
-description: Plans, writes and queues social content across networks in PostSyncer: a full week in one run, or a set of posts for one day. Use for "plan this week's social", "queue today's posts", or "social engine".
+description: 'Plans, writes and queues social content across networks in PostSyncer: a full week in one run, or a set of posts for one day. Use for "plan this week''s social", "queue today''s posts", or "social engine".'
 ---
 
 # Social Engine
