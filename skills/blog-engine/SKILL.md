@@ -71,7 +71,7 @@ At the start of each run, check which of these tools are available. List any tha
    - what those pages claim;
    - what they get wrong or leave out;
    - what an engine would need in order to cite this post instead.
-3. **Write the post.** Follow the principles below, the voice in `voice.md` and the locale in `profile.md`. Where the two conflict, `voice.md` wins on tone and `profile.md` wins on facts.
+3. **Write the post.** Follow the principles below, the voice in `voice.md` and the locale in `profile.md`. Where the two conflict, `voice.md` wins on tone and `profile.md` wins on facts. Then run the check in "Reading like a person wrote it" over the draft.
 4. **Wire it into the site.**
    - Use the repo's frontmatter and add `target_prompts` and `target_query` fields.
    - Set the title and meta description, add structured data that matches the post type, and add alt text.
@@ -99,6 +99,61 @@ At the start of each run, check which of these tools are available. List any tha
 - **Know something the cited pages don't.** That can be how the product actually behaves, a worked example, a decision table, or the owner's view. If you can't find something like that, reject the candidate with the reason rather than rewriting what competitors already say.
 - **Compare honestly.** A comparison says where each competitor is the better choice, and gives the date its facts were checked.
 - **Fit the length to the job.** Stop once the target prompts are answered.
+
+## Reading like a person wrote it
+
+Readers and editors stop trusting text that reads as machine-written, and so do the people who decide what engines cite. These checks come from Wikipedia's field guide, [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), and from the [humanizer](https://github.com/blader/humanizer) skill built on it. Each pattern is a symptom: a sentence that sounds important but says less than it seems to. Models drift toward the generic and replace an unusual, specific fact with a broad, positive claim. Fix a flagged sentence by putting the specific fact back, or delete it. Never just swap in a synonym. That hides the pattern and leaves the empty sentence.
+
+The staging patterns justify an edit on a single sighting. Patterns marked *weak alone* need another sign in the same passage before you act.
+
+**Staging instead of stating**
+
+- **No negative parallelisms.** "It's not X, it's Y", "not just X but Y", "not only… but also" and "Y rather than X" all name something nobody claimed, so that Y sounds bigger. So do the two-sentence form ("This doesn't mean X. It means Y.") and the clipped tail ("…, no guessing"). Say Y. Keep a contrast only when buyers really believe X, or when both halves carry information.
+- **No one-line closers.** Cut a short paragraph that repeats the one before it ("That's the real win.", "That distinction matters.", "Let that sink in."), the same closer after several sections, and a sentence that tells the reader what an example or number just showed. Merge a row of fragments ("No setup. No config. No waiting.") into one sentence with a specific claim. Don't put words in all caps or between periods for emphasis.
+- **No sayings that sound deep.** Avoid "at its core", "the real question is", "what really matters", "fundamentally", "X is the language of Y", "X becomes a trap" and "not a tool but a mirror". Write the plain claim.
+- **No run-up before the point.** Cut "Let's dive in", "Let's break this down", "Here's what you need to know", "Here's the thing", and "Honestly?" or "Look," used as an opener. Don't write "the hard part is…" or "the part that matters…" in place of naming the thing. Start with the point.
+- **No arguing with no one.** Cut "To be clear", "I'm not saying…", "This isn't about…", "Don't get me wrong", and "A tempting approach would be…" when nobody raised the point. Keep an objection buyers actually have, and answer it in full.
+
+**Content**
+
+- **State the fact, not its significance.** Cut "plays a pivotal role", "is a testament to", "marks a shift", "underscores the importance of", "the evolving landscape", "sets the stage for". The same goes for closing lines like "the future looks bright" and "exciting times ahead". If something matters, the fact should show why. End on the last concrete fact.
+- **No analysis tacked on with "-ing".** Cut tails like ", highlighting its commitment to…", ", ensuring…", ", reflecting…", ", contributing to…", ", fostering…". Either it is a claim with a source, written as its own sentence, or it goes.
+- **Name the relationship.** Don't write "associated with", "in connection with", "linked to" or "tied to". Say who built, owns, uses, replaced or integrates with what. If you don't know the relationship, find out or leave the point out.
+- **Name who said it.** Don't write "experts argue", "industry reports suggest", "observers note", "critics say", and don't say "several sources" when there is one. Name the person or publication and link to it, or cut the claim.
+- **Coverage is not a fact about the product.** Don't list outlets that "featured" or "profiled" something, say that a directory "lists" it, or quote follower counts as proof. Say what the product does.
+- **No formula endings.** Skip "Despite its strengths, X faces challenges…", "Future outlook" sections, and closers that start "In summary", "In conclusion", "Overall" or "Ultimately" and restate the verdict. Put a real limitation, stated concretely, where it applies.
+- **Don't write about the post itself.** Cut "the table below compares", "this guide is organized by", "compiled from public sources", "anything we couldn't confirm is flagged" and "this section replaces". Keep a source credit the reader can follow, and a caveat that changes what the reader should do.
+- **Don't repeat the heading.** The first sentence under a heading adds something new. It doesn't restate the heading ("## Pricing" followed by "Pricing matters.").
+
+**Language**
+
+- **Use plain verbs.** Write "is", "are" and "has". Avoid "serves as", "stands as", "functions as", "boasts", "features", "offers" (when it means "has") and "represents".
+- **No reflexive threes.** List as many items as actually exist. Two is fine. Watch for the paragraph version too: three parallel examples or three short facts followed by a lesson.
+- **Watch for AI vocabulary in clusters.** Words like "actually", "additionally" (to open a sentence), "align with", "bolster", "crucial", "deep dive", "delve", "enhance", "foster", "garner", "gate" or "gating" (when not literal), "highlight", "interplay", "intricate", "key" (as an adjective), "landscape", "leverage", "meticulous", "multifaceted", "pivotal", "quietly", "robust" (when not technical), "showcase", "tapestry", "testament", "underscore", "valuable" and "vibrant". One of these words is usually harmless. Several in one paragraph means rewrite the paragraph. The list shifts as models change, so read for the cluster, not for single words.
+- **No brochure adjectives.** Avoid "groundbreaking", "renowned", "seamless", "breathtaking", "stunning", "must-have", "nestled", "in the heart of", "rich", "profound", "a diverse array of" and "commitment to".
+- **Repeat the term.** Call the product, the feature or the competitor by the same name each time. Rotating synonyms to avoid repetition makes the reader guess whether it's the same thing.
+- **No gap-filling hedges or guesses.** Avoid "It's important to note", "based on available information", "not widely documented", "it is believed that", "likely" followed by a guess, and "should not be confused with" when nobody is confused. If information is missing, say what the source doesn't show, leave the point out, or add a `TODO(owner)` placeholder.
+- **Vary sentence openings.** Don't start three sentences in a row with the same word or subject. Merge them or lead with the action.
+- **One qualifier is enough.** Avoid stacks like "could potentially" and "might arguably". Keep a qualifier when the doubt is real. *Weak alone.*
+- **Name who acts.** Use the active voice when the passive hides the actor or drops the subject ("No config needed" becomes "You don't need a config file"). *Weak alone.*
+- **Hyphenate before the noun only.** "A long-term plan" but "the plan is long term". Words that always take a hyphen, such as "third-party", keep it. *Weak alone.*
+
+**Format**
+
+- Headings are in sentence case and name what the section holds, not a line written for effect. No emoji or arrows as decoration. No horizontal rule between every section, and no H1 that repeats the post title the template already shows.
+- Use bold at most for a key term, not in every paragraph. Don't break prose into lists of bold label plus colon; write a paragraph or use a table.
+- No em dashes or en dashes, including ` -- ` used as one, unless `voice.md` or the existing posts use them. In that case, match their rate. Use a period, comma, colon or parentheses instead. Leave hyphens in code, commands, paths and URLs alone.
+- Use straight quotes unless the existing posts use curly ones. *Weak alone.*
+
+**Leftovers that give it away outright**
+
+- Chat residue: "I hope this helps", "Certainly!", "Great question!", "Let me know if…", "Here is a…", anything about a knowledge cutoff.
+- Placeholder text: `example.com` links, `2025-XX-XX` dates, `INSERT_…` tokens. The only placeholders allowed are `TODO(owner)` items that are listed in the PR body.
+- Links with tracking added by AI tools (`utm_source=chatgpt.com`, `utm_source=openai`, `utm_source=copilot.com`, `referrer=grok.com`). Strip the parameters. Open every cited link: it must load and say what the post says it says. A dead link, a DOI or ISBN that doesn't resolve, or a book cited without a page number points to a made-up source.
+
+**When not to act.** Leave a flagged phrase alone inside a quotation, a product or proper name, a title, or a sentence that discusses the phrase itself. Keep the details that carry the owner's voice: an unusual specific detail, mixed feelings, an aside the owner would make, a choice they can explain.
+
+**The check.** Before opening the PR, read the draft once and mark every hit, strongest first. Rewrite each paragraph around its main point rather than patching phrases one at a time. Then compare against the first draft and confirm that every fact, name, number, date, quote and link survived. Fixes to triads, qualifiers and bold lists are the ones that drop facts most often. Read it again for the signs that most often survive a rewrite: contrasts, closers, triads, dashes and bold labels. Don't use AI detectors to judge the result. They are wrong often in both directions. The test is whether every sentence makes a specific claim a reader could check.
 
 ## Guardrails
 

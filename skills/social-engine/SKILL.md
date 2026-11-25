@@ -79,6 +79,7 @@ Find the PostSyncer tool names at the start of each run with ToolSearch. If some
    - The post follows the rules in `voice.md` and stays within the network's limits.
    - The first line, read on its own, makes a reader stop. If it doesn't, rewrite it.
    - Phrases the voice file bans, filler questions and engagement bait are cut.
+   - The post passes the check in "Reading like a person wrote it" below.
 6. **Queue.** Create each post with `create-post` on the right account, at its slot time, with the settings that network needs.
    - In `draft` mode, posts are saved as drafts.
    - In `schedule` mode, posts are scheduled, but only after the owner approves the plan in the conversation.
@@ -105,6 +106,33 @@ Confirm current limits with `get-account` or the platform's own documentation. T
   - With no media, leave the network out of that slot and say so.
   - Open the caption with the hook.
 - **Facebook and Google Business Profile.** Practical updates and offers with one clear call to action. A Google Business Profile post is about the business, never opinion.
+
+## Reading like a person wrote it
+
+People scroll past posts that read as machine-written. These checks come from Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) and the [humanizer](https://github.com/blader/humanizer) skill built on it. Each pattern is a sign that a line says less than it seems to. Fix it by putting the specific detail back (the number, the name, what actually happened) or by cutting the line. Never just swap in a synonym.
+
+The first five patterns justify a rewrite on a single sighting. Patterns marked *weak alone* need another sign in the same post.
+
+- **Say Y.** Cut "It's not X, it's Y", "not just X, but Y", "Y rather than X", the two-line form ("This isn't about X. It's about Y.") and the clipped tail ("…, no fluff"). Keep a contrast only when the audience really believes X.
+- **No staged run-ups.** Cut "Here's the thing", "Let's dive in", "Here's what nobody tells you", "Honestly?", "Look," and "The hard part?" used as openers. Start with the point.
+- **No closers that repeat.** Cut "Let that sink in.", "Read that again.", "That's the real win.", and a line that names the lesson of the story just told. Merge rows of fragments ("No fluff. No filler. Just results.") into one sentence with a claim. No words in all caps or between periods for emphasis. Short lines are normal on LinkedIn, but each one still has to add something.
+- **No sayings that sound deep.** Avoid "at its core", "the real question is", "what really matters", "X is the new Y" and "X is the language of Y".
+- **No arguing with no one.** Cut "To be clear", "I'm not saying…", "Don't get me wrong" and "Unpopular opinion:" when nobody holds the other view.
+- **Say what happened, not why it's significant.** Cut "a pivotal moment", "a testament to", "marks a shift", "in today's evolving landscape", "the future looks bright", "exciting times ahead", and tails like ", highlighting…" or ", ensuring…".
+- **Name the relationship.** Don't write "associated with" or "linked to". Say who built, uses or replaced what.
+- **No reflexive threes.** Give as many items as there really are, including at paragraph scale: three parallel lines followed by a lesson.
+- **Plain verbs.** Write "is" and "has", not "serves as", "stands as" or "boasts".
+- **Watch for AI vocabulary in clusters.** Look for "actually", "delve", "deep dive", "crucial", "key", "pivotal", "robust", "seamless", "leverage", "foster", "enhance", "showcase", "underscore", "quietly", "game-changer" and "unlock". One is usually fine. Several in one post means rewrite it.
+- **No brochure adjectives.** Avoid "groundbreaking", "stunning", "breathtaking", "renowned" and "must-have".
+- **No vague attribution.** Don't write "experts say" or "studies show" unless you name and link them. Don't use "featured in" lists or follower counts as proof.
+- **No hedges or guesses.** Cut "based on available information", "it's important to note" and "likely" followed by a guess. Where a fact is missing, use a `{{owner: ...}}` placeholder.
+- **Rhythm.** Don't start three lines in a row with the same word. Use one qualifier, not "could potentially". Name who acts instead of "No setup needed". All three are *weak alone*.
+- **Format like a person.** No emoji or arrows used as bullets or headers, and no bold label plus colon lists. No em dashes or en dashes unless `voice.md` or the owner's own posts use them; then match their rate. Use straight quotes.
+- **No leftovers.** No chat residue ("Here's a post…", "I hope this helps", "Great question!"), no placeholder text other than `{{owner: ...}}`, and no tracking parameters added by AI tools on links (`utm_source=chatgpt.com`, `utm_source=openai`).
+
+Leave a flagged phrase alone inside a quotation or a proper name. Keep the details that carry the owner's voice: an odd specific detail, mixed feelings, an aside. After rewriting, check that every fact, number, name and link from the source item is still there.
+
+Don't use AI detectors to judge a post. They are often wrong in both directions. The test is whether every line makes a specific point that only this product or this owner could make.
 
 ## Review
 
