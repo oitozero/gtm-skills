@@ -71,7 +71,7 @@ At the start of each run, check which of these tools are available. List any tha
    - what those pages claim;
    - what they get wrong or leave out;
    - what an engine would need in order to cite this post instead.
-3. **Write the post.** Follow the principles below, the voice in `voice.md` and the locale in `profile.md`. Where the two conflict, `voice.md` wins on tone and `profile.md` wins on facts.
+3. **Write the post.** Follow the principles below, the voice in `voice.md` and the locale in `profile.md`. Where the two conflict, `voice.md` wins on tone and `profile.md` wins on facts. Then run the check in "Reading like a person wrote it" over the draft.
 4. **Wire it into the site.**
    - Use the repo's frontmatter and add `target_prompts` and `target_query` fields.
    - Set the title and meta description, add structured data that matches the post type, and add alt text.
@@ -99,6 +99,43 @@ At the start of each run, check which of these tools are available. List any tha
 - **Know something the cited pages don't.** That can be how the product actually behaves, a worked example, a decision table, or the owner's view. If you can't find something like that, reject the candidate with the reason rather than rewriting what competitors already say.
 - **Compare honestly.** A comparison says where each competitor is the better choice, and gives the date its facts were checked.
 - **Fit the length to the job.** Stop once the target prompts are answered.
+
+## Reading like a person wrote it
+
+Readers and editors stop trusting text that reads as machine-written, and so do the people who decide what engines cite. These checks come from Wikipedia's field guide, [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Each pattern is a symptom: a sentence that sounds important but says less than it seems to. Models drift toward the generic and replace an unusual, specific fact with a broad, positive claim. Fix a flagged sentence by putting the specific fact back, or delete it. Never just swap in a synonym. That hides the pattern and leaves the empty sentence.
+
+**Content**
+
+- **State the fact, not its significance.** Cut "plays a pivotal role", "is a testament to", "marks a shift", "underscores the importance of", "the evolving landscape", "sets the stage for". If something matters, the fact should show why.
+- **No analysis tacked on with "-ing".** Cut tails like ", highlighting its commitment to…", ", ensuring…", ", reflecting…", ", contributing to…", ", fostering…". Either it is a claim with a source, written as its own sentence, or it goes.
+- **Name the relationship.** Don't write "associated with", "in connection with" or "linked to". Say who built, owns, uses, replaced or integrates with what.
+- **Name who said it.** Don't write "experts argue", "industry reports suggest", "observers note", "critics say", and don't say "several sources" when there is one. Name the person or publication and link to it, or cut the claim.
+- **Coverage is not a fact about the product.** Don't list outlets that "featured" or "profiled" something, or say that a directory "lists" it. Say what the product does.
+- **No formula endings.** Skip "Despite its strengths, X faces challenges…", "Future outlook" sections, and closers that start "In summary", "In conclusion" or "Overall". Put a real limitation, stated concretely, where it applies.
+
+**Language**
+
+- **Use plain verbs.** Write "is", "are" and "has". Avoid "serves as", "stands as", "functions as", "boasts", "features", "offers" (when it means "has") and "represents".
+- **No negative parallelisms.** Avoid "It's not X, it's Y", "not just X but Y", "not only… but also" and "Y rather than X" used for effect. Say Y.
+- **No reflexive threes.** List as many items as actually exist. Two is fine.
+- **Watch for AI vocabulary in clusters.** Words like "additionally" (to open a sentence), "align with", "bolster", "crucial", "delve", "enhance", "foster", "garner", "highlight", "interplay", "intricate", "landscape", "leverage", "meticulous", "multifaceted", "pivotal", "robust", "showcase", "tapestry", "testament", "underscore", "valuable" and "vibrant". One of these words is usually harmless. Several in one paragraph means rewrite the paragraph. The list shifts as models change, so read for the cluster, not for single words.
+- **No brochure adjectives.** Avoid "groundbreaking", "renowned", "seamless", "nestled", "in the heart of", "rich", "profound", "a diverse array of" and "commitment to".
+- **Repeat the term.** Call the product, the feature or the competitor by the same name each time. Rotating synonyms to avoid repetition makes the reader guess whether it's the same thing.
+- **No gap-filling hedges.** Avoid "It's important to note", "based on available information", "not widely documented", and "should not be confused with" when nobody is confused. If information is missing, leave the point out or add a `TODO(owner)` placeholder.
+
+**Format**
+
+- Headings are in sentence case, without emoji.
+- Use bold at most for a key term, not in every paragraph. Don't break prose into lists of bold label plus colon; write a paragraph or use a table.
+- Use em dashes sparingly. Commas, colons and periods usually work better. Match the punctuation, quotes and Markdown of the existing posts.
+
+**Leftovers that give it away outright**
+
+- Chat residue: "I hope this helps", "Certainly!", "Let me know if…", "Here is a…", anything about a knowledge cutoff.
+- Placeholder text: `example.com` links, `2025-XX-XX` dates, `INSERT_…` tokens. The only placeholders allowed are `TODO(owner)` items that are listed in the PR body.
+- Links with tracking added by AI tools (`utm_source=chatgpt.com`, `utm_source=openai`, `utm_source=copilot.com`, `referrer=grok.com`). Strip the parameters. Open every cited link: it must load and say what the post says it says. A dead link, a DOI or ISBN that doesn't resolve, or a book cited without a page number points to a made-up source.
+
+**The check.** Before opening the PR, read the draft once against this section and rewrite every hit. Don't use AI detectors to judge the result. They are wrong often in both directions. The test is whether every sentence makes a specific claim a reader could check.
 
 ## Guardrails
 

@@ -79,6 +79,7 @@ Find the PostSyncer tool names at the start of each run with ToolSearch. If some
    - The post follows the rules in `voice.md` and stays within the network's limits.
    - The first line, read on its own, makes a reader stop. If it doesn't, rewrite it.
    - Phrases the voice file bans, filler questions and engagement bait are cut.
+   - The post passes the check in "Reading like a person wrote it" below.
 6. **Queue.** Create each post with `create-post` on the right account, at its slot time, with the settings that network needs.
    - In `draft` mode, posts are saved as drafts.
    - In `schedule` mode, posts are scheduled, but only after the owner approves the plan in the conversation.
@@ -105,6 +106,21 @@ Confirm current limits with `get-account` or the platform's own documentation. T
   - With no media, leave the network out of that slot and say so.
   - Open the caption with the hook.
 - **Facebook and Google Business Profile.** Practical updates and offers with one clear call to action. A Google Business Profile post is about the business, never opinion.
+
+## Reading like a person wrote it
+
+People scroll past posts that read as machine-written. These checks come from Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing). Each pattern is a sign that a line says less than it seems to. Fix it by putting the specific detail back (the number, the name, what actually happened) or by cutting the line. Never just swap in a synonym.
+
+- **Say what happened, not why it's significant.** Cut "a pivotal moment", "a testament to", "marks a shift", "in today's evolving landscape", and tails like ", highlighting…" or ", ensuring…".
+- **No "It's not X, it's Y".** Also skip "not just X, but Y" and "Y rather than X" used for effect. Say Y.
+- **No reflexive threes.** Give as many items as there really are.
+- **Plain verbs.** Write "is" and "has", not "serves as", "stands as" or "boasts".
+- **Watch for AI vocabulary in clusters.** Look for "delve", "crucial", "pivotal", "robust", "seamless", "leverage", "foster", "enhance", "showcase", "underscore", "game-changer" and "unlock". One is usually fine. Several in one post means rewrite it.
+- **No vague attribution.** Don't write "experts say" or "studies show" unless you name and link them.
+- **Format like a person.** No emoji used as bullets or headers, no bold label plus colon lists, few em dashes. Follow `voice.md` where it says otherwise.
+- **No leftovers.** No chat residue ("Here's a post…", "I hope this helps"), no placeholder text other than `{{owner: ...}}`, and no tracking parameters added by AI tools on links (`utm_source=chatgpt.com`, `utm_source=openai`).
+
+Don't use AI detectors to judge a post. They are often wrong in both directions. The test is whether every line makes a specific point that only this product or this owner could make.
 
 ## Review
 
