@@ -152,3 +152,7 @@ Unattended runs never publish. The blog opens PRs, and social posts are saved as
 ## Adding a skill
 
 Create `skills/<name>/SKILL.md` with `name` and `description` frontmatter. Keep state in the product's repo, under `editorial/` for content skills or `gtm/` for strategy skills, and follow the same guardrails.
+
+## Credits
+
+The AI-writing checks in both skills draw on Wikipedia's [Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing), maintained by WikiProject AI Cleanup, and on [humanizer](https://github.com/blader/humanizer) by blader.
